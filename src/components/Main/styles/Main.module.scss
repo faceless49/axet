@@ -1,0 +1,13 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &_info {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+ }
+  &_sample {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

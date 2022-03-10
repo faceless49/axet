@@ -1,0 +1,21 @@
+.quote {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 32px;
+    background-image: url('../../../../assets/backtick.png');
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    background-image: url('../../../../assets/tick.png');
+    width: 40px;
+    height: 32px;
+    top: -5px;
+    left: 0;
+  }
+}

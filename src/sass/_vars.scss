@@ -1,0 +1,33 @@
+// * Colors
+
+$bgcolor: #1d1d1d;
+$maincolor: #08fdd8;
+$secondaryColor: #B3BAC0;
+$textColor: #fff;
+$tagColor: #515152;
+
+// * Media
+$mq1: 1440;
+$mq2: 1299.98;
+$mq3: 991.98;
+$mq4: 575.98;
+
+// * Container
+
+.container {
+  padding: 0 15px;
+  @media (min-width: $mq4+px) {
+    padding: 0 35px;
+  }
+  @media (min-width: $mq3+px) {
+    padding: 0 50px;
+  }
+  @media (min-width: $mq2+px) {
+    padding: 0 70px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media (min-width: $mq1+px) {
+    padding: 0 150px;
+  }
+}

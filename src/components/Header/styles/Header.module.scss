@@ -1,0 +1,11 @@
+@import "src/sass/vars";
+@import "src/sass/mixins";
+
+.header {
+  background-color: $secondaryColor;
+  opacity: 0.2;
+  &_wrap {
+    @include flexCenter;
+    justify-content: space-between;
+  }
+}
