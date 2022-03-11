@@ -1,11 +1,19 @@
 @import "src/sass/mixins";
 
-.code {
-  //@include flex(center, center);
-  //flex-direction: column;
+.sample {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 
-  &_sample {
+  &_example {
     background: rgba(179, 186, 192, 0.2);
     border-radius: 8px;
+    margin-top: 16px;
+  }
+
+  &_conditions {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 }
+

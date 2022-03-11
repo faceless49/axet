@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { ProfileType } from '../../redux/actions/profile';
 import { EditableTitle } from '../ui/editableTitle/EditableTitle';
 
-import styles from './Portfolio.module.scss';
+import styles from './Profile.module.scss';
 import { SkillsList } from './SkillList/SkillsList';
 
 type ProfilePropsType = ProfileType & {
