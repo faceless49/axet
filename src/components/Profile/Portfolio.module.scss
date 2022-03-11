@@ -1,0 +1,13 @@
+@import "src/sass/mixins";
+
+.portfolio {
+  &_info {
+    @include flex(center, flex-start);
+    flex-direction: column;
+
+    &_item {
+      @include fontParams(null, null, 1.14rem);
+      line-height: 24px;
+    }
+  }
+}

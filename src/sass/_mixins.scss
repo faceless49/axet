@@ -1,6 +1,12 @@
 
-@mixin flexCenter {
+@mixin flex($justify: stretch, $align: normal) {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin fontParams($font: Roboto,$weight: 400, $fz: 1rem) {
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $fz;
 }

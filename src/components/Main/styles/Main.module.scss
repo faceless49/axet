@@ -1,13 +1,18 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 56px 0;
+  gap: 40px;
 
   &_info {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
- }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px 24px;
+  }
+
   &_sample {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 24px;
   }
 }

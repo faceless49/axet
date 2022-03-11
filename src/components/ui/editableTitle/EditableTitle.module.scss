@@ -1,0 +1,6 @@
+@import "src/sass/mixins";
+
+.title {
+  @include fontParams(null, 500, 2.5rem);
+  line-height: 48px;
+}

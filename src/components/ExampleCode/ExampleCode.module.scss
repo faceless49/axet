@@ -1,0 +1,11 @@
+@import "src/sass/mixins";
+
+.code {
+  //@include flex(center, center);
+  //flex-direction: column;
+
+  &_sample {
+    background: rgba(179, 186, 192, 0.2);
+    border-radius: 8px;
+  }
+}

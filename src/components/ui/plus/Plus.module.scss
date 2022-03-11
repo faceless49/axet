@@ -1,0 +1,14 @@
+.first {
+  background-color: #FFFFFF;
+  width: 12px;
+  height: 2px;
+  z-index: 55;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  }
+
+.second {
+  @extend .first;
+  transform: rotate(90deg);
+}

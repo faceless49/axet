@@ -3,9 +3,11 @@
 
 .header {
   background-color: $secondaryColor;
-  opacity: 0.2;
+  padding: 40px 0 16px 0;
   &_wrap {
-    @include flexCenter;
-    justify-content: space-between;
+    @include flex(null,center);
+  }
+  &_info {
+    display: flex;
   }
 }

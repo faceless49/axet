@@ -1,0 +1,15 @@
+@import "src/sass/vars";
+@import "src/sass/mixins";
+
+.skill {
+  padding: 4px 8px;
+  background: $tagColor;
+  border-radius: 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  @include fontParams(null, null, 1.14rem);
+  &:hover {
+    background: $hoverTagColor;
+    transition: background ease 0.3s;
+  }
+}

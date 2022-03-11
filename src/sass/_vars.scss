@@ -1,10 +1,10 @@
 // * Colors
 
-$bgcolor: #1d1d1d;
-$maincolor: #08fdd8;
-$secondaryColor: #B3BAC0;
-$textColor: #fff;
-$tagColor: #515152;
+$secondaryColor: rgba(179, 186, 192, 0.2);
+$tagColor: #333333;
+$hoverTagColor: #666666;
+$linksColor: rgba(52, 131, 204, 1);
+$hoverLinksColor: rgba(235, 87, 87, 1);
 
 // * Media
 $mq1: 1440;
@@ -15,7 +15,7 @@ $mq4: 575.98;
 // * Container
 
 .container {
-  padding: 0 15px;
+  padding: 0 156px;
   @media (min-width: $mq4+px) {
     padding: 0 35px;
   }

@@ -1,0 +1,23 @@
+@import 'src/sass/vars';
+
+.projects {
+  color: $linksColor;
+
+  &:hover {
+    color: $hoverLinksColor;
+    transition: color ease 0.4s;
+  }
+
+  &_list {
+    padding-left: 18px;
+    &_item {
+      position: relative;
+
+      &:before {
+        content: '—';
+        position: absolute;
+        left: -18px;
+      }
+    }
+  }
+}
