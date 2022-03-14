@@ -22,6 +22,14 @@ export const ProfileContainer = (): ReturnComponentType => {
     [dispatch],
   );
 
+  const handleSetCityClick = useCallback(
+    (newCity: string) => {
+      const action = actions.setUserCity(newCity);
+      dispatch(action);
+    },
+    [dispatch],
+  );
+
   return (
     <Profile
       photos={photos}
@@ -29,6 +37,7 @@ export const ProfileContainer = (): ReturnComponentType => {
       city={city}
       language={language}
       onSetNameClick={handleSetNameClick}
+      onSetCityClick={handleSetCityClick}
     />
   );
 };

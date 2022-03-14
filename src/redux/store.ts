@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
 import { portfolioReducer } from './reducers/portfolio';
 import { profileReducer } from './reducers/profile';
@@ -11,8 +12,5 @@ const rootReducer = combineReducers({
 
 type RootReducerType = typeof rootReducer;
 export type AppRootStateType = ReturnType<RootReducerType>;
-//
-// // @ts-ignore
-//
-export const store = createStore(rootReducer);
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+
+export const store = createStore(rootReducer, applyMiddleware(thunk));

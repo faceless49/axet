@@ -1,7 +1,18 @@
 @import "src/sass/vars";
 
 .btn {
-  padding: 24px 24px;
   background-color: $tagColor;
   position: relative;
+  border-radius: 4px;
+}
+.skills {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+}
+.remover {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

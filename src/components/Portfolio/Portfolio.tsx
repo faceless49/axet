@@ -6,13 +6,15 @@ import { Quote } from '../common/Quote/Quote';
 import { Subtitle } from '../common/Subtitle/Subtitle';
 
 import styles from './Portfolio.module.scss';
-import { ProjectType } from './types';
+import { ProjectType, SkillType } from './types';
 
 export const Portfolio = (): ReturnComponentType => {
   const projects = useSelector<AppRootStateType, Array<ProjectType>>(
     state => state.portfolio.projects,
   );
-
+  const skills = useSelector<AppRootStateType, Array<SkillType>>(
+    state => state.portfolio.skills,
+  );
   const projectsElements = projects.map(({ id, name }) => (
     <li key={id} className={styles.projects_list_item}>
       <a href="www.google.com" className={styles.projects}>
@@ -27,9 +29,9 @@ export const Portfolio = (): ReturnComponentType => {
       <Subtitle>Experience</Subtitle>
       <ul className={styles.projects_list}>{projectsElements}</ul>
       <ul>
-        <li>PHP</li>
-        <li>RUBY</li>
-        <li>JavaScript</li>
+        {skills.map(({ id, skillName }) => (
+          <li key={id}>{skillName}</li>
+        ))}
       </ul>
       <Subtitle>The Most Amazing</Subtitle>
       <Subtitle>In clients I look for...</Subtitle>

@@ -11,6 +11,7 @@ const initialState = {
   photos: avatar,
   city: 'Portland, Oregon, Usa',
   language: 'English',
+  coords: '10 10',
 };
 
 export type InitialStateType = typeof initialState;
@@ -31,6 +32,12 @@ export const profileReducer = (
       return { ...state, userName: action.userName };
     case 'AXETA/PROFILE/SET_USER_LANGUAGE':
       return { ...state, language: action.language };
+    case 'AXETA/PROFILE/SET_USER_LOCATION': {
+      return {
+        ...state,
+        coords: action.coords,
+      };
+    }
 
     default:
       return state;

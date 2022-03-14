@@ -10,4 +10,9 @@
       line-height: 24px;
     }
   }
+  &_avatar {
+    max-width: 168px;
+    max-height: 168px;
+    border-radius: 50%;
+  }
 }

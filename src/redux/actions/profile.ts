@@ -5,6 +5,7 @@ export type ProfileType = {
   photos: string;
   city: string;
   language: string;
+  coords?: string;
 };
 
 export const actions = {
@@ -15,6 +16,8 @@ export const actions = {
     ({ type: 'AXETA/PROFILE/SET_USER_NAME', userName } as const),
 
   setUserCity: (city: string) => ({ type: 'AXETA/PROFILE/SET_USER_CITY', city } as const),
+  setUserLocation: (coords: string) =>
+    ({ type: 'AXETA/PROFILE/SET_USER_LOCATION', coords } as const),
 
   setUserLanguage: (language: string) =>
     ({ type: 'AXETA/PROFILE/SET_USER_LANGUAGE', language } as const),

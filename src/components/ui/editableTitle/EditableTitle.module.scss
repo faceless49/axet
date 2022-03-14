@@ -1,6 +1,23 @@
 @import "src/sass/mixins";
+@import "src/sass/vars";
 
 .title {
   @include fontParams(null, 500, 2.5rem);
   line-height: 48px;
+}
+
+.input {
+  position: relative;
+  &_wrap {
+  }
+
+  &_validate {
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+  &_error {
+    color: $hoverLinksColor;
+    @include fontParams(null, null, 1.14rem);
+  }
 }
