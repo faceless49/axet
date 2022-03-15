@@ -1,0 +1,47 @@
+@import "src/sass/vars";
+@import "src/sass/mixins";
+
+.dummy_positioning {
+  @include flex(center, center);
+}
+
+// Structure
+.success_icon {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0.85rem;
+  border-radius: 50%;
+  background-color: #33C127;
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+  overflow: hidden;
+}
+
+// Elements
+.success_icon {
+  &__tip,
+  &__long {
+    display: block;
+    position: absolute;
+    height: 2px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+
+  &__tip {
+    width: 0.5rem;
+    top: 0.8rem;
+    left: 0.3rem;
+    transform: rotate(45deg);
+  }
+
+  &__long {
+    width: 0.7rem;
+    transform: rotate(-45deg);
+    top: 0.7rem;
+    left: 0.6rem;
+  }
+}

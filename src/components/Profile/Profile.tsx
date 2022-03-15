@@ -22,7 +22,14 @@ export const Profile: FC<ProfilePropsType> = ({
 }) => (
   <>
     <div className={styles.portfolio_avatar}>
-      <img src={photos} alt="avatar" />
+      <form>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label htmlFor="upload" className={styles.portfolio_label}>
+          <img src={photos} alt="avatar" />
+          <div className={styles.portfolio_avatar_overlay} />
+        </label>
+        <input type="file" accept="image/png" name="upload" id="upload" />
+      </form>
     </div>
     <div className={styles.portfolio_info}>
       <EditableTitle title={userName} changeTitle={onSetNameClick} />

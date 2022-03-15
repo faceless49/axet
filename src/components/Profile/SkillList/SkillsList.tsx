@@ -1,4 +1,4 @@
-import { KeyboardEvent, useCallback, useState } from 'react';
+import React, { KeyboardEvent, useCallback, useState } from 'react';
 
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
@@ -33,12 +33,8 @@ export const SkillsList = (): ReturnComponentType => {
       if (!values.skillName) {
         errors.skillName = 'Required';
         setIsValidate(false);
-      } else if (
-        !/(^[A-Z]{1}[a-z]{1,14} [A-Z]{1}[a-z]{1,14}$)|(^[А-Я]{1}[а-я]{1,14} [А-Я]{1}[а-я]{1,14}$)/g.test(
-          values.skillName,
-        )
-      ) {
-        errors.skillName = 'Error Description';
+      } else if (!/^[a-zA-Z\s]*$/g.test(values.skillName)) {
+        errors.skillName = 'Please use only letters';
         setIsValidate(false);
       } else {
         setIsValidate(true);
@@ -73,6 +69,10 @@ export const SkillsList = (): ReturnComponentType => {
     }
   };
 
+  const textError = !isValidate && (
+    <span className={styles.input_error}>{formik.errors.skillName}</span>
+  );
+
   return (
     <div className={styles.skills}>
       {skills.map(({ id, skillName }) => (
@@ -83,18 +83,22 @@ export const SkillsList = (): ReturnComponentType => {
           onRemoveSkillClick={handleRemoveSkillDClick}
         />
       ))}
-      {editMode && (
-        <input
-          name="skillName"
-          value={formik.values.skillName}
-          onBlur={offEditMode}
-          onChange={formik.handleChange}
-          onKeyPress={onKeyPressHandler}
-        />
+      {editMode ? (
+        <>
+          <input
+            name="skillName"
+            value={formik.values.skillName}
+            onBlur={offEditMode}
+            onChange={formik.handleChange}
+            onKeyPress={onKeyPressHandler}
+          />
+          {textError}
+        </>
+      ) : (
+        <button type="submit" className={styles.btn} onClick={activateEditMode}>
+          <Plus />
+        </button>
       )}
-      <button type="submit" className={styles.btn} onClick={activateEditMode}>
-        <Plus />
-      </button>
     </div>
   );
 };

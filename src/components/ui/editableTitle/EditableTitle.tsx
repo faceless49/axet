@@ -2,10 +2,7 @@ import React, { KeyboardEvent, useState } from 'react';
 
 import { useFormik } from 'formik';
 
-// @ts-ignore
-import notValidImg from '../../../assets/validateTicks/notvalid.png';
-// @ts-ignore
-import validImg from '../../../assets/validateTicks/valid.png';
+import { Input } from '../../common/Input/Input';
 
 import styles from './EditableTitle.module.scss';
 
@@ -36,7 +33,7 @@ export const EditableTitle = React.memo((props: EditableSpanPropsType) => {
           values.title,
         )
       ) {
-        errors.title = 'Error Description';
+        errors.title = 'Please use only letter or enter fullname';
         setIsValidate(false);
       } else {
         setIsValidate(true);
@@ -64,27 +61,19 @@ export const EditableTitle = React.memo((props: EditableSpanPropsType) => {
       offEditMode();
     }
   };
-  const showError = !isValidate && (
-    <span className={styles.input_error}>{formik.errors.title}</span>
-  );
 
   return editMode ? (
     <div className={styles.input_wrap}>
-      <label htmlFor="title" className={styles.input}>
-        <input
-          name="title"
-          value={formik.values.title}
-          onBlur={offEditMode}
-          onChange={formik.handleChange}
-          onKeyPress={onKeyPressHandler}
-        />
-        <img
-          src={isValidate ? validImg : notValidImg}
-          className={styles.input_validate}
-          alt="validate img"
-        />
-      </label>
-      {showError}
+      <Input
+        type="text"
+        name="title"
+        value={formik.values.title}
+        onBlur={offEditMode}
+        onChange={formik.handleChange}
+        onKeyPress={onKeyPressHandler}
+        error={isValidate}
+        descriptionError={formik.errors.title}
+      />
     </div>
   ) : (
     <h2 onDoubleClick={activateEditMode} className={styles.title}>

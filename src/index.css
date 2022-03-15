@@ -29,7 +29,7 @@ section {
 html,
 body {
   height: 100%;
-  font-size: 16px;
+  font-size: 10px;
 }
 
 body {
@@ -47,7 +47,17 @@ body {
 input::-ms-clear {
   display: none;
 }
-
+input:focus {
+  outline: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 button {
   cursor: pointer;
 }

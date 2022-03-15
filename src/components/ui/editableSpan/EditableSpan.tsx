@@ -2,12 +2,9 @@ import React, { KeyboardEvent, useState } from 'react';
 
 import { useFormik } from 'formik';
 
-// @ts-ignore
-import notValidImg from '../../../assets/validateTicks/notvalid.png';
-// @ts-ignore
-import validImg from '../../../assets/validateTicks/valid.png';
 import { ReturnComponentType } from '../../../types';
-import styles from '../editableTitle/EditableTitle.module.scss';
+
+import styles from './EditableSpan.module.scss';
 
 type EditableSpanPropsType = {
   city: string;
@@ -32,12 +29,8 @@ export const EditableSpan = React.memo(
         if (!values.city) {
           errors.city = 'Required';
           setIsValidate(false);
-        } else if (
-          !/(^[A-Z]{1}[a-z]{1,14} [A-Z]{1}[a-z]{1,14}$)|(^[А-Я]{1}[а-я]{1,14} [А-Я]{1}[а-я]{1,14}$)/g.test(
-            values.city,
-          )
-        ) {
-          errors.city = 'Error Description';
+        } else if (!/^[a-zA-Z\s]*$/g.test(values.city)) {
+          errors.city = 'Please enter country and city, use only letters';
           setIsValidate(false);
         } else {
           setIsValidate(true);
@@ -66,9 +59,15 @@ export const EditableSpan = React.memo(
       }
     };
 
-    const showError = !isValidate && (
+    const textError = !isValidate && (
       <span className={styles.input_error}>{formik.errors.city}</span>
     );
+
+    const finalInputClassName = `${
+      !isValidate
+        ? styles.input_label
+        : `${`${styles.error_input} ${styles.input_label}`}`
+    }`;
 
     return editMode ? (
       <div className={styles.input_wrap}>
@@ -79,17 +78,15 @@ export const EditableSpan = React.memo(
             onBlur={offEditMode}
             onChange={formik.handleChange}
             onKeyPress={onKeyPressHandler}
-          />
-          <img
-            src={isValidate ? validImg : notValidImg}
-            className={styles.input_validate}
-            alt="validate img"
+            className={finalInputClassName}
           />
         </label>
-        {showError}
+        {textError}
       </div>
     ) : (
-      <span onDoubleClick={activateEditMode}>{props.city}</span>
+      <span onDoubleClick={activateEditMode} className={styles.city}>
+        {props.city}
+      </span>
     );
   },
 );

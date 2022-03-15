@@ -1,10 +1,6 @@
 @import "src/sass/mixins";
 @import "src/sass/vars";
 
-.city {
-  @include fontParams(null, null, 1.6rem);
-  @include hoverNameCityParams
-}
 
 .error {
   color: $hoverLinksColor;
@@ -23,30 +19,21 @@
     background: $hoverNameCity;
     border-bottom: 1px solid black;
     max-width: 36rem;
-    @include fontParams(null, 500, 2.4rem);
+    @include fontParams(null, 500, 2.5rem);
+    line-height: 48px;
     @include hoverNameCityParams;
     position: relative;
-    max-height: 2.4rem;
+    max-height: 48px;
   }
-
   &_validate {
     position: absolute;
     top: 5px;
     right: 0;
   }
-
   &_wrap {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 1rem
-  }
-  &_error {
-    color: $hoverLinksColor;
-    @include fontParams(null, null, 1.4rem)
   }
 }
-
 .form_wrap {
   position: relative;
   display: flex;

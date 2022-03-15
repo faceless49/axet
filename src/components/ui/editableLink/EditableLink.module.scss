@@ -1,3 +1,12 @@
-.is-done {
-  opacity: 0.5;
+@import "src/sass/vars";
+
+
+
+.input {
+  &_exp {
+    width: 4rem;
+    height: 2rem;
+    border-bottom: 1px solid black;
+    background: $hoverNameCity;
+  }
 }

@@ -81,6 +81,12 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "react/jsx-props-no-spreading" :[
+      0, {
+        "html": "ignore",
+        "custom": "ignore"
+      }
+    ],
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "import/order": [

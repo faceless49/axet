@@ -7,7 +7,7 @@ import { getCoords } from '../../helpers/getCoords';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { requestLocation } from '../../redux/thunks/location';
 import { ReturnComponentType } from '../../types';
-import { ExampleCode } from '../ExampleCode/ExampleCode';
+import { About } from '../ExampleCode/About';
 import { Portfolio } from '../Portfolio/Portfolio';
 
 import styles from './styles/Main.module.scss';
@@ -30,18 +30,20 @@ export const Main = (): ReturnComponentType => {
         <div className={styles.main_info}>
           <Portfolio />
         </div>
-        <div className={styles.main_sample}>
-          <ExampleCode />
-        </div>
-        <YMaps query={{ load: 'Map', lang: 'en_RU' }}>
-          <Map
-            state={{ center: arrayOfNumberCoords, zoom: 10 }}
-            onLoad={ymaps => ymaps.load()}
-          >
-            <Placemark geometry={arrayOfNumberCoords} />
-            <GeoObject />
-          </Map>
-        </YMaps>
+
+        <About>
+          <YMaps query={{ load: 'Map', lang: 'en_RU' }} width="100%">
+            <Map
+              state={{ center: arrayOfNumberCoords, zoom: 10 }}
+              onLoad={ymaps => ymaps.load()}
+              width="100%"
+              height="200px"
+            >
+              <Placemark geometry={arrayOfNumberCoords} />
+              <GeoObject />
+            </Map>
+          </YMaps>
+        </About>
       </div>
     </div>
   );

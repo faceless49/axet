@@ -1,0 +1,30 @@
+@import "src/sass/vars";
+
+.close_btn {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: $hoverLinksColor;
+  border-radius: 50%;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.close_btn:before, .close_btn:after {
+  position: absolute;
+  left: 0.7rem;
+  content: "";
+  bottom: 0.4rem;
+  height: 8px;
+  width: 2px;
+  background-color: #FFFFFF
+}
+
+.close_btn:before {
+  transform: rotate(45deg);
+}
+
+.close_btn:after {
+  transform: rotate(-45deg);
+}

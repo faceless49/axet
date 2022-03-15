@@ -1,4 +1,4 @@
-
+@import "vars";
 @mixin flex($justify: stretch, $align: normal) {
   display: flex;
   align-items: $align;
@@ -9,4 +9,12 @@
   font-family: $font;
   font-weight: $weight;
   font-size: $fz;
+}
+
+@mixin hoverNameCityParams {
+  &:hover {
+    cursor: pointer;
+    background-color: $hoverNameCity;
+    transition: background-color ease 0.3s;
+  }
 }

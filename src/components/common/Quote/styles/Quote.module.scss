@@ -1,9 +1,12 @@
+@import "src/sass/mixins";
+
 .quote {
   position: relative;
-  margin-top: 40px;
   display: block;
   max-width: 232px;
   text-align: center;
+  @include fontParams(null, null, 1.6rem);
+
   &:after {
     content: '';
     position: absolute;
@@ -14,6 +17,7 @@
     opacity: 0.2;
     background-image: url('../../../../assets/backtick.png');
   }
+
   &:before {
     content: '';
     position: absolute;

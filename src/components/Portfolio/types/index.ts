@@ -6,4 +6,5 @@ export type ProjectType = {
 export type SkillType = {
   id: string;
   skillName: string;
+  experience: number;
 };

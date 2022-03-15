@@ -1,4 +1,5 @@
 @import 'src/sass/vars';
+@import 'src/sass/mixins';
 
 .projects {
   color: $linksColor;
@@ -10,8 +11,10 @@
 
   &_list {
     padding-left: 18px;
+
     &_item {
       position: relative;
+      @include fontParams(null, null, 1.6rem);
 
       &:before {
         content: '—';
@@ -20,4 +23,37 @@
       }
     }
   }
+
+  &_skills {
+    padding-left: 18px;
+
+    &_items {
+      @extend .projects_list_item;
+      @include fontParams(null, 700, 1.6rem);
+
+      &_exp {
+        @include fontParams(null, null, 1.6rem);
+        color: $linksColor;
+        border-bottom: 1px dashed $linksColor;
+        cursor: pointer;
+
+        &:hover {
+          cursor: pointer;
+          color: $hoverLinksColor;
+          transition: color ease 0.3s;
+        }
+      }
+    }
+
+    &:before {
+      content: '—';
+      position: absolute;
+      left: -18px;
+    }
+  }
+}
+.portfolio, .experience {
+  @include flex(null, flex-start);
+  flex-direction: column;
+  gap: 24px
 }

@@ -7,7 +7,6 @@ import { profileReducer } from './reducers/profile';
 const rootReducer = combineReducers({
   profile: profileReducer,
   portfolio: portfolioReducer,
-  //   exp: expReducer,
 });
 
 type RootReducerType = typeof rootReducer;

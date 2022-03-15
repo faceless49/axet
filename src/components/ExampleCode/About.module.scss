@@ -1,0 +1,22 @@
+@import "src/sass/mixins";
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 85px 24px;
+
+  &_conditions {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    span {
+      @include fontParams(null, null, 1.6rem)
+    }
+  }
+  &_map {
+    grid-column: span 2;
+  }
+}
+

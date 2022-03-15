@@ -1,27 +1,32 @@
 import React, { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react';
 
+import styles from './EditableLink.module.scss';
+
 type EditableSpanPropsType = {
-  title: string;
-  changeTitle: (title: string) => void;
+  onSetSkillExpClick: (skillId: string, experience: number) => void;
+  skillExperience: number;
+  skillExpId: string;
+  className: string;
 };
 
 export const EditableLink = React.memo((props: EditableSpanPropsType) => {
   const [editMode, setEditMode] = useState<boolean>(false);
-  const [title, setTitle] = useState<string>(props.title);
+  const [skillExpValue, setSkillExpValue] = useState<number>(props.skillExperience);
 
   const activateEditMode = (): void => {
     setEditMode(true);
-    setTitle(props.title);
+    setSkillExpValue(Number(props.skillExperience));
   };
   const offEditMode = (): void => {
-    if (title) {
-      props.changeTitle(title);
+    if (skillExpValue) {
+      const skillValue = Number(skillExpValue);
+      props.onSetSkillExpClick(props.skillExpId, skillValue);
     }
     setEditMode(!activateEditMode);
   };
 
   const changeTitle = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.currentTarget.value);
+    setSkillExpValue(Number(e.currentTarget.value));
   }, []);
   const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter') {
@@ -31,14 +36,16 @@ export const EditableLink = React.memo((props: EditableSpanPropsType) => {
 
   return editMode ? (
     <input
-      value={title}
+      type="number"
+      value={skillExpValue}
       onBlur={offEditMode}
       onChange={changeTitle}
       onKeyPress={onKeyPressHandler}
+      className={styles.input_exp}
     />
   ) : (
-    <a onClick={activateEditMode} href="/#">
-      {props.title}
-    </a>
+    <span onClick={activateEditMode} className={props.className} role="presentation">
+      {props.skillExperience} years
+    </span>
   );
 });
