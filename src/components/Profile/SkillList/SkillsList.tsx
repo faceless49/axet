@@ -8,7 +8,6 @@ import { AppRootStateType } from '../../../redux/store';
 import { ReturnComponentType } from '../../../types';
 import { SkillItem } from '../../Portfolio/Skill/SkillItem';
 import { SkillType } from '../../Portfolio/types';
-import { Plus } from '../../ui/plus/Plus';
 
 import styles from './SkillList.module.scss';
 
@@ -95,8 +94,8 @@ export const SkillsList = (): ReturnComponentType => {
           {textError}
         </>
       ) : (
-        <button type="submit" className={styles.btn} onClick={activateEditMode}>
-          <Plus />
+        <button type="submit" onClick={activateEditMode} className={styles.skills_btn}>
+          +
         </button>
       )}
     </div>

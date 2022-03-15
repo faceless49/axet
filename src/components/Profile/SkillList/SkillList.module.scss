@@ -11,9 +11,20 @@
   justify-content: center;
   gap: 8px;
   margin-top: 15px;
+
+  &_btn {
+    color: #FFFFFF;
+    background: $tagColor;
+    padding: 5px 8px;
+    border-radius: 4px;
+  }
+
 }
 .remover {
   position: absolute;
   top: 0;
   right: 0;
+}
+.input_error {
+  color:$hoverLinksColor;
 }

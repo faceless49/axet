@@ -27,15 +27,20 @@ export const SkillItem: FC<SkillItemPropsType> = ({
   };
 
   return (
-    <>
+    <div className={styles.skill_wrap}>
       <span className={styles.skill} onDoubleClick={onSetRemoveSkillMode}>
         {title}
       </span>
       {isRemoveSkillMode && (
-        <button type="button" onClick={removeOnClick}>
-          X
+        <button
+          type="button"
+          onClick={removeOnClick}
+          aria-label="Delete skill"
+          className={styles.skill_btn}
+        >
+          x
         </button>
       )}
-    </>
+    </div>
   );
 };

@@ -3,6 +3,8 @@ import React, { KeyboardEvent, useState } from 'react';
 import { useFormik } from 'formik';
 
 import { ReturnComponentType } from '../../../types';
+import { IsValid } from '../isValid/IsValid';
+import { NotValid } from '../notValid/notValid';
 
 import styles from './EditableSpan.module.scss';
 
@@ -80,6 +82,7 @@ export const EditableSpan = React.memo(
             onKeyPress={onKeyPressHandler}
             className={finalInputClassName}
           />
+          {!isValidate ? <NotValid /> : <IsValid />}
         </label>
         {textError}
       </div>
