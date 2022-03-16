@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/axet/static/css/main.004ebbd2.css",
+    "main.js": "/axet/static/js/main.162d3d01.js",
+    "static/media/userpic.png": "/axet/static/media/userpic.98845484d09725baacfa.png",
+    "index.html": "/axet/index.html",
+    "main.004ebbd2.css.map": "/axet/static/css/main.004ebbd2.css.map",
+    "main.162d3d01.js.map": "/axet/static/js/main.162d3d01.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.004ebbd2.css",
+    "static/js/main.162d3d01.js"
+  ]
+}
