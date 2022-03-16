@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import { Nullable } from '../../../types';
+import { Nullable } from '../../../../types';
 
 import styles from './Skill.module.scss';
 
@@ -18,7 +18,6 @@ export const SkillItem: FC<SkillItemPropsType> = ({
   const [isRemoveSkillMode, setRemoveSkillMode] = useState(false);
 
   const onSetRemoveSkillMode = (): Nullable<void> => {
-    console.log('click');
     setRemoveSkillMode(true);
   };
 

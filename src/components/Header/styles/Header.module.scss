@@ -4,12 +4,23 @@
 .header {
   background-color: $secondaryColor;
   padding: 40px 0 16px 0;
+
   &_wrap {
-    @include flex(null,center);
+    @include flex(null, center);
+    @media (max-width: $mq5+px) {
+      display: block;
+    }
   }
+
   &_info {
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @media (max-width: $mq5+px) {
+      flex-direction: column;
+    }
   }
 }
+
+

@@ -1,13 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react';
 
 import styles from './EditableLink.module.scss';
-
-type EditableSpanPropsType = {
-  onSetSkillExpClick: (skillId: string, experience: number) => void;
-  skillExperience: number;
-  skillExpId: string;
-  className: string;
-};
+import { EditableSpanPropsType } from './type';
 
 export const EditableLink = React.memo((props: EditableSpanPropsType) => {
   const [editMode, setEditMode] = useState<boolean>(false);
@@ -44,7 +38,12 @@ export const EditableLink = React.memo((props: EditableSpanPropsType) => {
       className={styles.input_exp}
     />
   ) : (
-    <span onClick={activateEditMode} className={props.className} role="presentation">
+    <span
+      onClick={activateEditMode}
+      onTouchStart={activateEditMode}
+      className={props.className}
+      role="presentation"
+    >
       {props.skillExperience} years
     </span>
   );

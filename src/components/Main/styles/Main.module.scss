@@ -1,12 +1,22 @@
+@import "src/sass/vars";
+
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 56px 0;
   gap: 40px;
+  @media (max-width: $mq4+px) {
+    grid-template-columns: auto;
+    padding: 30px 0;
+    gap: 0;
+  }
 
   &_info {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 70px;
+    @media (max-width: $mq4+px) {
+      gap: 25px;
+    }
   }
 }

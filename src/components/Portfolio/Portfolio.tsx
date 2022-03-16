@@ -1,7 +1,6 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getSortedSkills } from '../../helpers/skillsSelector';
-import { useAppSelector } from '../../hooks/useAppSelector';
+import { selectSortedSkills } from '../../helpers/skillsSelector';
 import { actions } from '../../redux/actions/portfolio';
 import { Nullable, ReturnComponentType } from '../../types';
 import { Quote } from '../common/Quote/Quote';
@@ -9,21 +8,12 @@ import { Subtitle } from '../common/Subtitle/Subtitle';
 import { EditableLink } from '../ui/editableLink/EditableLink';
 
 import styles from './Portfolio.module.scss';
-import { ProjectType, SkillType } from './types';
+import { ProjectList } from './ProjectList/ProjectList';
 
 export const Portfolio = (): ReturnComponentType => {
-  const projects = useAppSelector<Array<ProjectType>>(state => state.portfolio.projects);
-  const skills = useAppSelector<Array<SkillType>>(getSortedSkills);
+  const sortedSkills = useSelector(selectSortedSkills);
 
   const dispatch = useDispatch();
-
-  const projectsElements = projects.map(({ id, name }) => (
-    <li key={id} className={styles.projects_list_item}>
-      <a href="www.google.com" className={styles.projects}>
-        {name}
-      </a>
-    </li>
-  ));
 
   const handleSetSkillExpClick = (skillId: string, skillExp: number): Nullable<void> => {
     dispatch(actions.updateExperience(skillId, skillExp));
@@ -33,12 +23,12 @@ export const Portfolio = (): ReturnComponentType => {
     <>
       <div className={styles.portfolio}>
         <Subtitle>Portfolio</Subtitle>
-        <ul className={styles.projects_list}>{projectsElements}</ul>
+        <ProjectList />
       </div>
       <div className={styles.experience}>
         <Subtitle>Experience</Subtitle>
         <ul className={styles.projects_skills}>
-          {skills.map(({ id, skillName, experience }) => (
+          {sortedSkills.map(({ id, skillName, experience }) => (
             <li key={id} className={styles.projects_skills_items}>
               {skillName}{' '}
               <EditableLink

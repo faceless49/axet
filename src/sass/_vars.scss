@@ -9,17 +9,26 @@ $hoverNameCity: rgba(0, 0, 0, 0.06);
 
 
 // * Media
+
+
 $mq1: 1440;
 $mq2: 1299.98;
 $mq3: 991.98;
-$mq4: 575.98;
+$mq4: 767.98;
+$mq5: 575.98;
+$mq6: 359.98;
 
 // * Container
 
 .container {
-  padding: 0 156px;
-  @media (min-width: $mq4+px) {
+  @media (min-width: $mq6+px) {
+    padding: 0 15px;
+  }
+  @media (min-width: $mq5+px) {
     padding: 0 35px;
+  }
+  @media (min-width: $mq4+px) {
+    padding: 0 40px;
   }
   @media (min-width: $mq3+px) {
     padding: 0 50px;
@@ -30,6 +39,6 @@ $mq4: 575.98;
     margin: 0 auto;
   }
   @media (min-width: $mq1+px) {
-    padding: 0 150px;
+    padding: 0 156px;
   }
 }

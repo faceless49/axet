@@ -1,0 +1,24 @@
+@import "src/sass/mixins";
+@import "src/sass/vars";
+
+.projects {
+  &_list {
+    &_item {
+      position: relative;
+      @include fontParams(null, null, 1.6rem);
+
+      &:before {
+        content: '—';
+        position: absolute;
+        left: -18px;
+      }
+
+      &_link {
+        &:hover {
+          color: $hoverLinksColor;
+          transition: color ease 0.4s;
+        }
+      }
+    }
+  }
+}

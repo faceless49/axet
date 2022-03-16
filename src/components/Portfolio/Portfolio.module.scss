@@ -2,34 +2,19 @@
 @import 'src/sass/mixins';
 
 .projects {
-  color: $linksColor;
 
-  &:hover {
-    color: $hoverLinksColor;
-    transition: color ease 0.4s;
-  }
-
-  &_list {
+  &_skills {
     padding-left: 18px;
 
-    &_item {
+    &_items {
       position: relative;
-      @include fontParams(null, null, 1.6rem);
+      @include fontParams(null, 700, 1.6rem);
 
       &:before {
         content: '—';
         position: absolute;
         left: -18px;
       }
-    }
-  }
-
-  &_skills {
-    padding-left: 18px;
-
-    &_items {
-      @extend .projects_list_item;
-      @include fontParams(null, 700, 1.6rem);
 
       &_exp {
         @include fontParams(null, null, 1.6rem);
@@ -44,14 +29,9 @@
         }
       }
     }
-
-    &:before {
-      content: '—';
-      position: absolute;
-      left: -18px;
-    }
   }
 }
+
 .portfolio, .experience {
   @include flex(null, flex-start);
   flex-direction: column;

@@ -1,16 +1,11 @@
 import { FC } from 'react';
 
-import { ProfileType } from '../../redux/actions/profile';
+import { SkillsList } from '../Portfolio/SkillList/SkillsList';
 import { EditableSpan } from '../ui/editableSpan/EditableSpan';
 import { EditableTitle } from '../ui/editableTitle/EditableTitle';
 
 import styles from './Profile.module.scss';
-import { SkillsList } from './SkillList/SkillsList';
-
-type ProfilePropsType = ProfileType & {
-  onSetNameClick: (newUserName: string) => void;
-  onSetCityClick: (newCity: string) => void;
-};
+import { ProfilePropsType } from './type';
 
 export const Profile: FC<ProfilePropsType> = ({
   userName,
@@ -22,7 +17,7 @@ export const Profile: FC<ProfilePropsType> = ({
 }) => (
   <>
     <div className={styles.portfolio_avatar}>
-      <form>
+      <form name="upload">
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="upload" className={styles.portfolio_label}>
           <img src={photos} alt="avatar" />
@@ -32,9 +27,11 @@ export const Profile: FC<ProfilePropsType> = ({
       </form>
     </div>
     <div className={styles.portfolio_info}>
-      <EditableTitle title={userName} changeTitle={onSetNameClick} />
-      <EditableSpan city={city} changeCity={onSetCityClick} />
-      <span className={styles.portfolio_info_item}>{language}</span>
+      <div className={styles.portfolio_info_wrap}>
+        <EditableTitle title={userName} changeTitle={onSetNameClick} />
+        <EditableSpan city={city} changeCity={onSetCityClick} />
+        <span className={styles.portfolio_info_item}>{language}</span>
+      </div>
       <SkillsList />
     </div>
   </>

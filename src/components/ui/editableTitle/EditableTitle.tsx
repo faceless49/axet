@@ -5,17 +5,9 @@ import { useFormik } from 'formik';
 import { Input } from '../../common/Input/Input';
 
 import styles from './EditableTitle.module.scss';
+import { EditableTitlePropsType, FormikErrorType } from './type';
 
-type EditableSpanPropsType = {
-  title: string;
-  changeTitle: (title: string) => void;
-};
-
-type FormikErrorType = {
-  title?: string;
-};
-
-export const EditableTitle = React.memo((props: EditableSpanPropsType) => {
+export const EditableTitle = React.memo((props: EditableTitlePropsType) => {
   const [editMode, setEditMode] = useState<boolean>(false);
   const [isValidate, setIsValidate] = useState<boolean>(true);
 
@@ -76,7 +68,11 @@ export const EditableTitle = React.memo((props: EditableSpanPropsType) => {
       />
     </div>
   ) : (
-    <h2 onDoubleClick={activateEditMode} className={styles.title}>
+    <h2
+      onDoubleClick={activateEditMode}
+      onTouchStart={activateEditMode}
+      className={styles.title}
+    >
       {props.title}
     </h2>
   );

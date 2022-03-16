@@ -88,10 +88,7 @@ export const locationAPI = {
           res.data.response.GeoObjectCollection.featureMember[indexCoordsOfPoint]
             .GeoObject.Point,
       )
-      .then(res => {
-        console.log(res.pos);
-        return res.pos;
-      })
+      .then(res => res.pos)
       .catch(err => console.log(err));
   },
 

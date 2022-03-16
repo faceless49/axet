@@ -6,6 +6,9 @@ import { AppRootStateType } from '../redux/store';
 export const getUserSkills = (state: AppRootStateType): Array<SkillType> =>
   state.portfolio.skills;
 
-export const getSortedSkills = createSelector(getUserSkills, skills =>
-  skills.sort((a, b) => b.experience - a.experience),
+const sortSkills = (skills: Array<SkillType>): Array<SkillType> =>
+  [...skills].sort((a, b) => b.experience - a.experience);
+
+export const selectSortedSkills = createSelector(getUserSkills, skills =>
+  sortSkills(skills),
 );

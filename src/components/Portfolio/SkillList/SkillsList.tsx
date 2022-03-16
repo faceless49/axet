@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../redux/actions/portfolio';
 import { AppRootStateType } from '../../../redux/store';
 import { ReturnComponentType } from '../../../types';
-import { SkillItem } from '../../Portfolio/Skill/SkillItem';
-import { SkillType } from '../../Portfolio/types';
+import { SkillType } from '../types';
 
+import { SkillItem } from './SkillItem/SkillItem';
 import styles from './SkillList.module.scss';
 
 type FormikErrorType = {
@@ -90,6 +90,7 @@ export const SkillsList = (): ReturnComponentType => {
             onBlur={offEditMode}
             onChange={formik.handleChange}
             onKeyPress={onKeyPressHandler}
+            style={{ maxWidth: '150px' }}
           />
           {textError}
         </>

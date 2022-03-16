@@ -1,4 +1,5 @@
 @import "src/sass/mixins";
+@import "src/sass/vars";
 
 .about {
   display: grid;
@@ -6,15 +7,23 @@
   grid-template-rows: 1fr 1fr;
   gap: 85px 24px;
 
+  @media (max-width: $mq4+px) {
+    gap: 0px 40px;
+  }
+
   &_conditions {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    @media (max-width: $mq4+px) {
+      gap: 10px;
+    }
 
     span {
       @include fontParams(null, null, 1.6rem)
     }
   }
+
   &_map {
     grid-column: span 2;
   }

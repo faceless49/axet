@@ -7,15 +7,7 @@ import { IsValid } from '../isValid/IsValid';
 import { NotValid } from '../notValid/notValid';
 
 import styles from './EditableSpan.module.scss';
-
-type EditableSpanPropsType = {
-  city: string;
-  changeCity: (newCity: string) => void;
-};
-
-type FormikErrorType = {
-  city?: string;
-};
+import { EditableSpanPropsType, FormikErrorType } from './type';
 
 export const EditableSpan = React.memo(
   (props: EditableSpanPropsType): ReturnComponentType => {
@@ -31,7 +23,7 @@ export const EditableSpan = React.memo(
         if (!values.city) {
           errors.city = 'Required';
           setIsValidate(false);
-        } else if (!/^[a-zA-Z\s]*$/g.test(values.city)) {
+        } else if (!/^[A-Za-z0-9,\. ]{3,50}$/g.test(values.city)) {
           errors.city = 'Please enter country and city, use only letters';
           setIsValidate(false);
         } else {
@@ -87,7 +79,11 @@ export const EditableSpan = React.memo(
         {textError}
       </div>
     ) : (
-      <span onDoubleClick={activateEditMode} className={styles.city}>
+      <span
+        onDoubleClick={activateEditMode}
+        onTouchStart={activateEditMode}
+        className={styles.city}
+      >
         {props.city}
       </span>
     );

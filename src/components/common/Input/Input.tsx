@@ -17,7 +17,6 @@ type DefaultInputPropsType = DetailedHTMLProps<
 >;
 
 type InputPropsType = DefaultInputPropsType & {
-  // not standtart options
   onEnter: () => void;
   onChangeText: (value: string) => void;
   error: boolean;
@@ -37,22 +36,15 @@ export const Input: React.FC<Partial<InputPropsType>> = ({
   descriptionError,
 }) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>): Nullable<void> => {
-    // eslint-disable-next-line no-unused-expressions
-    onChange && // если есть пропс onChange
-      onChange(e); // то передать ему е (поскольку onChange не обязателен)
+    onChange && onChange(e);
 
-    // eslint-disable-next-line no-unused-expressions
     onChangeText && onChangeText(e.currentTarget.value);
   };
 
   const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>): Nullable<void> => {
-    // eslint-disable-next-line no-unused-expressions
     onKeyPress && onKeyPress(e);
 
-    // eslint-disable-next-line no-unused-expressions
-    onEnter && // если есть пропс onEnter
-      e.key === 'Enter' && // и если нажата кнопка Enter
-      onEnter(); // то вызвать его
+    onEnter && e.key === 'Enter' && onEnter();
   };
 
   const finalInputClassName = `${!error ? styles.error_input : styles.input_label}`;

@@ -22,7 +22,6 @@ export const Main = (): ReturnComponentType => {
   useEffect(() => {
     dispatch(requestLocation(userLocation));
   }, [userLocation]);
-  console.log(coords);
 
   return (
     <div className="container">
@@ -30,7 +29,6 @@ export const Main = (): ReturnComponentType => {
         <div className={styles.main_info}>
           <Portfolio />
         </div>
-
         <About>
           <YMaps query={{ load: 'Map', lang: 'en_RU' }} width="100%">
             <Map

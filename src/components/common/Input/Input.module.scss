@@ -25,15 +25,18 @@
     position: relative;
     max-height: 48px;
   }
+
   &_validate {
     position: absolute;
     top: 5px;
     right: 0;
   }
+
   &_wrap {
     position: relative;
   }
 }
+
 .form_wrap {
   position: relative;
   display: flex;

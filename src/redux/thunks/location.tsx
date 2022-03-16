@@ -9,7 +9,6 @@ export const requestLocation =
     try {
       const response = await locationAPI.getLocation(city);
       if (response) {
-        console.log(`${response} response getLocation`);
         dispatch(actions.setUserLocation(response));
       }
     } catch (e) {

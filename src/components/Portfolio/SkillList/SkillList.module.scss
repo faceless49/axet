@@ -1,4 +1,4 @@
-@import "src/sass/vars";
+@import "../../../sass/vars";
 
 .btn {
   background-color: $tagColor;
@@ -17,8 +17,13 @@
     background: $tagColor;
     padding: 5px 8px;
     border-radius: 4px;
+    @media (max-width: $mq3+px) {
+      padding: 4px 8px;
+    }
+    @media (max-width: $mq4+px) {
+      padding: 3px 8px;
+    }
   }
-
 }
 .remover {
   position: absolute;

@@ -4,7 +4,9 @@
   &_info {
     @include flex(center, flex-start);
     flex-direction: column;
-
+    &_wrap {
+     @extend .portfolio_info
+    }
     &_item {
       @include fontParams(null, null, 1.6rem);
       line-height: 24px;

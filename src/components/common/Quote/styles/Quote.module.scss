@@ -16,6 +16,9 @@
     height: 32px;
     opacity: 0.2;
     background-image: url('../../../../assets/backtick.png');
+    @media (max-width: 500px) {
+      right: -0.2rem;
+    }
   }
 
   &:before {

@@ -4,7 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import { ReturnComponentType } from '../../../types';
 
-import Theme2 from './Theme2';
+import Theme from './Theme';
 
 export const Highlighter = (): ReturnComponentType => {
   const child = `<div class='golden-grid'>
@@ -17,7 +17,7 @@ export const Highlighter = (): ReturnComponentType => {
   return (
     <SyntaxHighlighter
       language="htmlbars"
-      style={Theme2}
+      style={Theme}
       showLineNumbers
       showInlineLineNumbers
       customStyle={{

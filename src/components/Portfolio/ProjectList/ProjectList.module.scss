@@ -1,0 +1,8 @@
+@import 'src/sass/vars';
+
+.projects {
+  &_list {
+    color: $linksColor;
+    padding-left: 18px;
+  }
+}
