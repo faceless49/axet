@@ -36,14 +36,16 @@ export const Input: React.FC<Partial<InputPropsType>> = ({
   descriptionError,
 }) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>): Nullable<void> => {
+    // eslint-disable-next-line no-unused-expressions
     onChange && onChange(e);
-
+    // eslint-disable-next-line no-unused-expressions
     onChangeText && onChangeText(e.currentTarget.value);
   };
 
   const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>): Nullable<void> => {
+    // eslint-disable-next-line no-unused-expressions
     onKeyPress && onKeyPress(e);
-
+    // eslint-disable-next-line no-unused-expressions
     onEnter && e.key === 'Enter' && onEnter();
   };
 
