@@ -1,4 +1,4 @@
-<h1 align="center">Todolist</h1>
+<h1 align="center">Profile</h1>
 
 
 ## Stack
