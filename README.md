@@ -18,4 +18,4 @@
 - Work with map - change city and map reaction.
 - Validation form of user name, user city.
 
-<img src="https://media.giphy.com/media/Q0N8WsgVO7iHNEplm3/giphy.gif" data-canonical-src="https://media.giphy.com/media/Q0N8WsgVO7iHNEplm3/giphy.gif" width="500">
+<img src="https://media.giphy.com/media/Q0N8WsgVO7iHNEplm3/giphy.gif" data-canonical-src="https://media.giphy.com/media/Q0N8WsgVO7iHNEplm3/giphy.gif" width="600" height="500">
